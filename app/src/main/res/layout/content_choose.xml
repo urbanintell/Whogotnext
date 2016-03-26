@@ -13,6 +13,7 @@
     tools:showIn="@layout/activity_choose">
 <ListView
     android:layout_width="match_parent"
+    android:id="@+id/sports_list_view"
     android:layout_height="match_parent"
     android:layout_alignParentRight="true"
     android:layout_alignParentEnd="true"
