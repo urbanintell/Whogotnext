@@ -14,6 +14,8 @@
         completions."
     </string>
     <string name="facebook_text">Facebook</string>
+    <string name="parse_app_id">eyMzbtH56tAE2rMcm9TjBIvfSRI34uCDENAJ31ay</string>
+    <string name="parse_client_id">bosjczf81WGIAteEFZvfAhsIufxi3YgzpLWUYUlC</string>
     <string name="title_activity_login">Sign in</string>
     <string name="title_activity_choose">ChooseActivity</string>
 </resources>
