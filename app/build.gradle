@@ -31,4 +31,5 @@ dependencies {
     compile 'com.parse:parsefacebookutils-v4-android:1.10.3@aar'
     compile 'com.parse:parseui-widget-android:0.0.1'
     compile 'info.hoang8f:fbutton:1.0.5'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
