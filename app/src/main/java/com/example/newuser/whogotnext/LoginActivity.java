@@ -107,6 +107,9 @@ public class LoginActivity extends AppCompatActivity implements LocationListener
                     Intent toChooseActivity = new Intent(getApplicationContext(), ChooseActivity.class);
                     startActivity(toChooseActivity);
                     Toast.makeText(getApplicationContext(), "You have successfully logged in.", Toast.LENGTH_LONG).show();
+
+                    passwordText.setText("");
+                    userName.setText("");
                 } else {
                     Toast.makeText(getApplicationContext(), "Checked username or password.", Toast.LENGTH_LONG).show();
                 }
