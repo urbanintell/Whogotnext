@@ -15,4 +15,5 @@
     </string>
     <string name="facebook_text">Facebook</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_choose">ChooseActivity</string>
 </resources>
