@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -47,7 +49,6 @@ public class ChooseActivity extends AppCompatActivity {
     }
 
 
-
     private void queryEvents() {
         ParseQuery<Event> query = ParseQuery.getQuery("Event");
         query.findInBackground(new FindCallback<Event>() {
@@ -72,6 +73,31 @@ public class ChooseActivity extends AppCompatActivity {
 
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.logout) {
+            ParseUser user = ParseUser.getCurrentUser();
+            user.logOut();
+            Intent logoutIntent = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(logoutIntent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
 
 

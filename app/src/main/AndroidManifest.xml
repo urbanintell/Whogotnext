@@ -43,7 +43,7 @@
         <activity
             android:name=".ChooseActivity"
             android:label="@string/title_activity_choose"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity android:name=".SignUpActivity" />
         <activity
             android:name=".CreateSessionActivty"
