@@ -37,7 +37,6 @@ public class ChooseActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Object item = parent.getItemAtPosition(position);
-                Log.v("HERE ERROR","CLICKED HERE");
                 Intent toEventActivity = new Intent(getApplicationContext(), ListOfSessionActivity.class);
                 toEventActivity.putExtra("Name", item.toString());
                 ParseUser currentUser = ParseUser.getCurrentUser();
