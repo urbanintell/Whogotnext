@@ -37,8 +37,6 @@
             android:label="@string/title_activity_choose"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".ParseLoginActivity" >
-        </activity>
     </application>
 
 </manifest>
