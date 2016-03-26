@@ -1,7 +1,6 @@
 package com.example.newuser.whogotnext;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,8 +17,6 @@ import com.facebook.login.widget.LoginButton;
 
 import java.util.Arrays;
 
-import app.com.grouprun.Activities.MapActivity;
-import app.com.grouprun.R;
 
 /**
  * A fragment with a Google +1 button.
@@ -90,8 +87,8 @@ public class FacebookButtonFragment extends Fragment implements View.OnClickList
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Intent mapActivityIntent = new Intent(getContext(), MapActivity.class);
-                startActivity(mapActivityIntent);
+//                Intent mapActivityIntent = new Intent(getContext(), MapActivity.class);
+//                startActivity(mapActivityIntent);
             }
 
             @Override

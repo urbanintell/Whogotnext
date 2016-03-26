@@ -1,18 +1,4 @@
 package com.example.newuser.whogotnext;
-import com.facebook.AccessToken;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.HttpMethod;
-import com.facebook.login.widget.LoginButton;
-import com.parse.LogInCallback;
-import com.parse.ParseException;
-import com.parse.ParseFacebookUtils;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
-
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.Intent;
 import android.content.Loader;
@@ -33,9 +19,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.parse.LogInCallback;
-//import com.parse.ParseException;
-//import com.parse.ParseUser;
+import com.facebook.AccessToken;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.HttpMethod;
+import com.facebook.login.widget.LoginButton;
+import com.parse.LogInCallback;
+import com.parse.ParseException;
+import com.parse.ParseFacebookUtils;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,13 +39,14 @@ import org.json.JSONObject;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.Object;import java.lang.Override;import java.lang.String;import java.lang.System;import java.net.URL;
+import java.net.URL;
 import java.net.URLConnection;
 import java.util.Arrays;
 import java.util.List;
 
-import app.com.grouprun.Activities.MapActivity;import app.com.grouprun.Activities.SignUpActivity;import app.com.grouprun.Fragments.FacebookButtonFragment;
-import app.com.grouprun.R;
+//import com.parse.LogInCallback;
+//import com.parse.ParseException;
+//import com.parse.ParseUser;
 /**
  * A login screen that offers login via email/password.
  */
@@ -109,8 +106,8 @@ public class LoginActivity extends AppCompatActivity implements FacebookCallback
         signUpText.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+//                startActivity(intent);
             }
         });
     }
@@ -154,11 +151,11 @@ public class LoginActivity extends AppCompatActivity implements FacebookCallback
 
     }
     public void getUserDetailsFromParse() {
-        parseUser = ParseUser.getCurrentUser();
-        Toast.makeText(LoginActivity.this, "Welcome back " + parseUser.getUsername(), Toast.LENGTH_SHORT).show();
-//        Intent toMapActivity = new Intent(LoginActivity.this, MapActivity.class);
-        startActivity(toMapActivity);
-        finish();
+//        parseUser = ParseUser.getCurrentUser();
+//        Toast.makeText(LoginActivity.this, "Welcome back " + parseUser.getUsername(), Toast.LENGTH_SHORT).show();
+////        Intent toMapActivity = new Intent(LoginActivity.this, MapActivity.class);
+//        startActivity(toMapActivity);
+//        finish();
     }
     private void getUserDetailsFromFB() {
 
@@ -196,47 +193,47 @@ public class LoginActivity extends AppCompatActivity implements FacebookCallback
         parseUser.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
-                Intent toLogin = new Intent(LoginActivity.this, MapActivity.class);
-                toLogin.putExtra("profilePic", image);
-                Toast.makeText(LoginActivity.this, "Welcome " + name + ", thanks for signing up!", Toast.LENGTH_SHORT).show();
-                startActivity(toLogin);
-                finish();
+//                Intent toLogin = new Intent(LoginActivity.this, MapActivity.class);
+//                toLogin.putExtra("profilePic", image);
+//                Toast.makeText(LoginActivity.this, "Welcome " + name + ", thanks for signing up!", Toast.LENGTH_SHORT).show();
+//                startActivity(toLogin);
+//                finish();
 
             }
         });
     }
 
     private void signin(){
-        logInButton.setOnClickListener(new OnClickListener() {
-
-
-            @Override
-            public void onClick(View v) {
-                if ("".equals(userName.toString()) || "".equals(passwordText.toString())) {
-//                    DISPLAY INPUT VALIDTION ERROR
-                    return;
-                } else {
-                    ParseUser.logInInBackground(userName.getText().toString(), passwordText.getText().toString(), new LogInCallback() {
-                        @Override
-                        public void done(ParseUser parseUser, ParseException e) {
-                            if (parseUser != null) {
-                                Intent toLogin = new Intent(LoginActivity.this, MapActivity.class);
-                                startActivity(toLogin);
-                                userName.setText("");
-                                passwordText.setText("");
-                                signInMessage("You have successfully logged in!");
-
-                            } else {
-//                            DISPLAY ERRROR
-                                signInMessage("Your username or password was incorrect.");
-                                System.out.println(parseUser);
-                            }
-                        }
-                    });
-
-                }
-            }
-        });
+//        logInButton.setOnClickListener(new OnClickListener() {
+//
+//
+//            @Override
+//            public void onClick(View v) {
+//                if ("".equals(userName.toString()) || "".equals(passwordText.toString())) {
+////                    DISPLAY INPUT VALIDTION ERROR
+//                    return;
+//                } else {
+//                    ParseUser.logInInBackground(userName.getText().toString(), passwordText.getText().toString(), new LogInCallback() {
+//                        @Override
+//                        public void done(ParseUser parseUser, ParseException e) {
+//                            if (parseUser != null) {
+//                                Intent toLogin = new Intent(LoginActivity.this, MapActivity.class);
+//                                startActivity(toLogin);
+//                                userName.setText("");
+//                                passwordText.setText("");
+//                                signInMessage("You have successfully logged in!");
+//
+//                            } else {
+////                            DISPLAY ERRROR
+//                                signInMessage("Your username or password was incorrect.");
+//                                System.out.println(parseUser);
+//                            }
+//                        }
+//                    });
+//
+//                }
+//            }
+//        });
     }
 
     protected void signInMessage(String s){
