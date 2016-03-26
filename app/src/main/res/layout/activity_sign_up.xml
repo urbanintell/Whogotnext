@@ -83,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:hint="Password"
+                android:hint="Confirm Password"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff" />
         </android.support.design.widget.TextInputLayout>
@@ -107,10 +107,10 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="Already a member? Login"
+            android:text="Already a member? Log in"
             android:gravity="center"
             android:textSize="16dip"
-            android:textColor="#f6f0f0" />
+            android:textColor="#fefc55" />
 
     </LinearLayout>
 </LinearLayout>
