@@ -27,5 +27,6 @@
     <string name="title_activity_parse_login">"parse sign in "</string>
     <string name="reset_password">Reset Password</string>
     <string name="logout">Logout</string>
+    <string name="google_maps_key">AIzaSyBZkR0RgcURfB0ReIJWyyQWw5oV3N9hJ8Y</string>
 
 </resources>

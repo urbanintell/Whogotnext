@@ -1,16 +1,16 @@
 package com.example.newuser.whogotnext;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.widget.ArrayAdapter;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
@@ -31,9 +31,23 @@ public class ChooseActivity extends AppCompatActivity {
         objectId= ParseUser.getCurrentUser().getObjectId();
 
         queryEvents();
+        sportsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Object item = parent.getItemAtPosition(position);
+                Log.v("HERE ERROR","CLICKED HERE");
+                Intent toEventActivity = new Intent(getApplicationContext(), ListOfSessionActivity.class);
+                toEventActivity.putExtra("Name", item.toString());
+                ParseUser currentUser = ParseUser.getCurrentUser();
+                startActivity(toEventActivity);
+            }
+        });
 
       
     }
+
+
+
     private void queryEvents() {
         ParseQuery<Event> query = ParseQuery.getQuery("Event");
         query.findInBackground(new FindCallback<Event>() {
