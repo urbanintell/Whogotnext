@@ -32,6 +32,8 @@ public class LoginActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Set up the login form.
+
+
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
 //        faceBookButton = (LoginButton) findViewById(R.id.facebook_login_button);
@@ -43,6 +45,15 @@ public class LoginActivity extends AppCompatActivity  {
         passwordText = (EditText) findViewById(R.id.input_password);
         logInButton = (Button)findViewById(R.id.button_login);
         signUpText = (TextView)findViewById(R.id.link_signup);
+
+
+        logInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logIn();
+            }
+        });
+
 
         signUpText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +68,13 @@ public class LoginActivity extends AppCompatActivity  {
     public void signUp(){
         Intent signUpIntent = new Intent(getApplicationContext(), SignUpActivity.class);
         startActivity(signUpIntent);
+    }
+
+
+    public void logIn(){
+        Intent toChooseActivity = new Intent(getApplicationContext(), ChooseActivity.class);
+        startActivity(toChooseActivity);
+
     }
 
 
