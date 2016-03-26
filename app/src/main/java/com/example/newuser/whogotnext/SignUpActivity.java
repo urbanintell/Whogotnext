@@ -18,8 +18,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     private TextView logInText;
     private EditText username;
-    private EditText email;
     private EditText password;
+    private EditText passwordConfirmation;
     private Button createAccountButton;
 
     @Override
@@ -27,10 +27,13 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         username = (EditText) findViewById(R.id.input_username);
-        email = (EditText) findViewById(R.id.input_email);
         password = (EditText) findViewById(R.id.input_password);
         createAccountButton = (Button) findViewById(R.id.button_signup);
         logInText = (TextView) findViewById(R.id.link_login);
+
+
+
+
         createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,4 +63,11 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void setPasswordConfirmation(){
+        if(!password.getText().toString().equals(passwordConfirmation.getText().toString())){
+                Toast.makeText(getApplicationContext(),"Your passwords do not match",Toast.LENGTH_LONG ).show();
+        }
+    }
 }
+
