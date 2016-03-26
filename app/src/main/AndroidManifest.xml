@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<<<<<<< HEAD
+
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -20,8 +20,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-=======
->>>>>>> 9502bf8296b9fc300bbce788714e97b769f5c049
+
     <application
         android:name=".ParseInit"
         android:allowBackup="true"
@@ -38,23 +37,21 @@
          <intent-filter>
          <action android:name="android.intent.action.MAIN" />
 
-<<<<<<< HEAD
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-=======
 
-         <category android:name="android.intent.category.LAUNCHER" />
-         </intent-filter>
-         </activity>
 
->>>>>>> 9502bf8296b9fc300bbce788714e97b769f5c049
+
+
+
         <activity
             android:name=".ChooseActivity"
             android:label="@string/title_activity_choose"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SignUpActivity" />
-<<<<<<< HEAD
+
         <activity
             android:name=".CreateEventsActivity"
             android:label="@string/title_activity_create_events"
@@ -79,10 +76,6 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"></activity>
-=======
-        <activity android:name=".ParseLoginActivity" >
-        </activity>
->>>>>>> 9502bf8296b9fc300bbce788714e97b769f5c049
     </application>
 
 </manifest>
